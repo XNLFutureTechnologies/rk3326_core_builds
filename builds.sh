@@ -7,14 +7,16 @@
 # based distributions.                                           #
 # See the LICENSE.md file at the top-level directory of this     #
 # repository.                                                    #
+#                                                                #
+# Updated by XNL Future Technologies (RicoR_XNL) for use with    #
+# SystemR36                                                      #
 ##################################################################
 
 
 cur_wd="$PWD"
 valid_id='^[0-9]+$'
-es_git="https://github.com/christianhaitian/EmulationStation-fcamod.git"
 nxengevo_git="https://github.com/nxengine/nxengine-evo.git"
-ra_cores_git="https://github.com/christianhaitian/retroarch-cores.git"
+ra_cores_git="https://github.com/xnlfuturetechnologies/retroarch-cores.git"
 bitness="$(getconf LONG_BIT)"
 
 for var in $@
