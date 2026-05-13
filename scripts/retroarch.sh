@@ -7,6 +7,9 @@
 # based distributions.                                           #
 # See the LICENSE.md file at the top-level directory of this     #
 # repository.                                                    #
+#                                                                #
+# Updated by XNL Future Technologies (RicoR_XNL) for use with    #
+# SystemR36                                                      #
 ##################################################################
 
 cur_wd="$PWD"
@@ -28,9 +31,6 @@ tag="v1.22.2"
 
 	 cd retroarch/
 	 git checkout ${tag}
-
-	 # Revert change in Retroarch 1.18 of how content directory and save sorting settings work
-	 #git revert 338c9a4fe441899e98c95ab082e18ddb5f931e49 --no-edit
 
 	 retroarch_patches=$(find *.patch)
 	 
@@ -66,7 +66,7 @@ tag="v1.22.2"
 	    --disable-vulkan_display \
 	    --disable-wayland \
 	    --disable-x11 \
-            --disable-jack \
+        --disable-jack \
 	    --disable-pulse \
         --disable-xrandr \
         --disable-winrawinput \
@@ -75,7 +75,7 @@ tag="v1.22.2"
         --disable-d3d11 \
         --disable-d3d12 \
         --disable-opengl1 \
-        --disable-microphone \
+        --enable-microphone \
 	    --enable-alsa \
 	    --enable-egl \
 	    --enable-freetype \
@@ -102,8 +102,7 @@ tag="v1.22.2"
 	    --disable-vulkan_display \
 	    --disable-wayland \
 	    --disable-x11 \
-            --disable-jack \
-	    --disable-pulse \
+        --disable-jack \
         --disable-xrandr \
         --disable-winrawinput \
         --disable-gdi \
@@ -111,7 +110,8 @@ tag="v1.22.2"
         --disable-d3d11 \
         --disable-d3d12 \
         --disable-opengl1 \
-        --disable-microphone \
+	    --enable-pulse \
+        --enable-microphone \
 	    --enable-alsa \
 	    --enable-egl \
 	    --enable-freetype \
