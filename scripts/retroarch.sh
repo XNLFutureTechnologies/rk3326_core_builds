@@ -20,7 +20,8 @@ tag="v1.22.2"
 	if [[ "$var" == "retroarch" ]]; then
 	 cd $cur_wd
 	  if [ ! -d "retroarch/" ]; then
-		git clone https://github.com/libretro/retroarch.git
+	    # Using a 'personal fork' or the exact version for which this script and the patches are intended (this to prevent random issues with the patchfiles)
+		git clone https://github.com/XNLFutureTechnologies/retroarch.git
 		if [[ $? != "0" ]]; then
 		  echo " "
 		  echo "There was an error while cloning the retroarch libretro git.  Is Internet active or did the git location change?  Stopping here."
