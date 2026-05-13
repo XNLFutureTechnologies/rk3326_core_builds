@@ -1,19 +1,14 @@
-# Script to automate the build of various Libretro cores, Nxengine-evo, Retroarch, PPSSPP, ScummVM, Emulationstation-fcamod for use with RK3326 devices (including Chi, OGA, OGS, RG351P/M/MP/V, and the RK2020)
-
-## For the rk3566 chipset, use the rk3566 branch
+# Script to automate the build of various Libretro cores, Nxengine-evo, Retroarch, PPSSPP, ScummVM, EmulationStation-XNL for use with SystemR36 on the R36S/H (RK3326)
 
 ### Assumptions:
-This script was designed to work with 32bit and 64bit chroot Linux environments for the RK3326 chipset. \
-See [this document](https://github.com/christianhaitian/rk3326_core_builds/blob/main/docs/chroot.md) for instructions on how to create them yourself. \
-You can also download a prebuilt one I created by following the information [here](https://forum.odroid.com/viewtopic.php?p=306185#p306185) \
-Or you can use a [Docker container](https://github.com/cscribn/rk-core-builder) contributed by [Chad Scribner](https://github.com/cscribn).
+This script was designed to work with 32bit and 64bit chroot Linux environments for the RK3326 chipset. 
 
 This script is designed to only build cores, retroarch and PPSSPP that are compatible with the aarch64 or armhf environment it's run from.  So to build cores for the 32bit armhf environment, it should be run from an arm32 environment such as a 32bit chroot.
 
-## How to use: (In a aarch64 chroot or armhf chroot or building from Ubuntu based distro on a RK3326 device)
+## How to use: (In a aarch64 chroot or armhf chroot, or when building directly from SystemR36 on the R36S/H (NOTE: ONLY recommended for arm64, I recommend using a chroot for the armhf stuff!)
 
 ```
-git clone https://github.com/christianhaitian/rk3326_core_builds.git
+git clone https://github.com/XNLFutureTechnologies/rk3326_core_builds.git
 cd rk3326_core_builds
 ```
 
@@ -419,7 +414,7 @@ cd rk3326_core_builds
 ### To build just xroar (64bit only):
 `./builds.sh xroar`
 
-### To build just retroarch:
+### To build just retroarch (Build on 64 bit system for 64bit version and on 32bit chroot to build the 32bit armhf version!):
 `./builds.sh retroarch`
 
 ### To build Nxegnine-evo (64bit only)
@@ -427,15 +422,6 @@ cd rk3326_core_builds
 
 ### To build SDLPoP (64bit only)
 `./builds.sh sdlpop`
-
-### To add a system for screenscraper scraping in Emulationstation-fcamod (64bit only)
-`./builds.sh es_add_scrape`
-
-### To build Emulationstation-fcamod (64bit only)
-`./builds.sh es_build`
-
-### To build Network Manager
-`./builds.sh NetworkManager`
 
 ### To build SDL 2.0.28.2
 `./builds.sh sdl2`
